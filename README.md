@@ -32,6 +32,7 @@ python manage.py runserver
 ```
 ## 效果 
 > 数据库建表预览：
+
 ![image-20220321235727915](https://gitee.com/ran_yong/mark-down-table-upload/raw/master/img/image-20220321235727915.png)
 
 
