@@ -19,7 +19,20 @@ git clone https://github.com/ranyong1997/Sakura_Infinity.git
 清华镜像源安装：pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt
 
 3 -- 修改数据库链接创建数据库
+在Sakura_Infinity/settings.py中修改DATABASES里的
+['NAME']['USER']['PASSWORD']['HOST']
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': '数据库名字',
+        'USER': '数据库用户名',
+        'PASSWORD': '数据库密码',
+        'HOST': '数据库地址',  # 默认 localhost
+        'PORT': 3306,
+        'OPTIONS': {'charset': 'utf8'}
+    }
+}
 
 4 --执行迁移
 python manage.py makemigrations
