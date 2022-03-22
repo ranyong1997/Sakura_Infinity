@@ -17,7 +17,7 @@
       <excludeFolder url="file://$MODULE_DIR$/static/forms/bootstrap-table/dist" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.10 (Sakura_Infinity)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.10 (Salvation)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TemplatesService">

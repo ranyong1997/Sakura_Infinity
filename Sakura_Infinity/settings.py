@@ -4,23 +4,17 @@ from datetime import timedelta
 from pathlib import Path
 import sys, os
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# add app path
+
 sys.path.insert(0, os.path.join(BASE_DIR, "apps"))
 
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-j**=7l4rg&zqyjbui9qyoe^#c(-5a#2^(iu%2jz0@)fjfn9%rm'
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 AUTH_USER_MODEL = "oauth.Users"
-
-
-# Application definition
 
 INSTALLED_APPS = [
     'simpleui',
@@ -80,9 +74,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Sakura_Infinity.wsgi.application'
 
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -94,9 +85,6 @@ DATABASES = {
         'OPTIONS': {'charset': 'utf8'}
     }
 }
-
-# Password validation
-# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -113,8 +101,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# Internationalization
-# https://docs.djangoproject.com/en/3.2/topics/i18n/
 LANGUAGE_CODE = 'zh-hans'
 
 TIME_ZONE = 'Asia/Shanghai'
@@ -125,10 +111,7 @@ USE_L10N = True
 
 USE_TZ = False
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.2/howto/static-files/
-
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
@@ -140,7 +123,6 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication', ],
-
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',  # 分页功能
     'PAGE_SIZE': 50  # 一页可现实数据条数
 }
@@ -149,17 +131,14 @@ REST_FRAMEWORK = {
 CHECK_SHELL_PATH = '/Users/reda-flight/Desktop/djwork/Sakura_Infinity/toolsrc/dependency-check/bin/dependency-check.sh'  # check.sh 脚本路径 task 执行时的路径
 
 #  celery 定时任务
-
 CELERY_BEAT_SCHEDULE = {
     'update_checktask_table_task': {  # 更新任务表任务
         'task': 'tool.tasks.update_checktask_table_task',
         'schedule': timedelta(seconds=10),  # 每10秒执行一次
     },
-
     'delete_result_data_task': {  # 删除数据任务
         'task': 'tool.tasks.delete_result_data_task',  # AppName应用的tasks.py文件中的方法名
         'schedule': timedelta(hours=1),  # 每1小时执行
-
     }
 }
 
@@ -178,7 +157,6 @@ CELERY_TIMEZONE = 'Asia/Shanghai'
 CELERY_ENABLE_UTC = True
 DJANGO_CELERY_BEAT_TZ_AWARE = False
 CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
-
 CELERY_BROKER_URL = 'redis://127.0.0.1:6379/0'  # celery 结果返回，可用于跟踪结果
 CELERY_RESULT_BACKEND = 'django-db'  # 使用 database 作为结果存储
 CELERY_CACHE_BACKEND = 'django-cache'  # celery 后端缓存
@@ -218,7 +196,6 @@ LOGGING = {
             'backupCount': 100,
             'formatter': 'verbose'
         },
-
     },
     'loggers': {
         # 不同的logger
@@ -231,3 +208,4 @@ LOGGING = {
 }
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+

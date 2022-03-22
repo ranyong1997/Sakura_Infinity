@@ -1,13 +1,30 @@
-# Sakura🌸后台管理
-[![Django CI](https://github.com/liangliangyy/DjangoBlog/actions/workflows/django.yml/badge.svg)](https://github.com/liangliangyy/DjangoBlog/actions/workflows/django.yml) [![CodeQL](https://github.com/liangliangyy/DjangoBlog/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/liangliangyy/DjangoBlog/actions/workflows/codeql-analysis.yml) [![codecov](https://codecov.io/gh/liangliangyy/DjangoBlog/branch/master/graph/badge.svg)](https://codecov.io/gh/liangliangyy/DjangoBlog)  [![license](https://img.shields.io/github/license/liangliangyy/djangoblog.svg)]()  
+<div align="center">
+<br/>
+<br/>
+<img src="admin/images/logo.png" width="90px" style="margin-top:30px;"/>
+  <h1 align="center">
+    Skura_Infinity
+  </h1>
+  <h4 align="center">
+    Sakura🌸后台管理
+  </h4> 
+
+  [预 览](http://layui.pearadmin.com)    
+</div>
+
+<div align="center">
+
+[![Django CI](https://github.com/liangliangyy/DjangoBlog/actions/workflows/django.yml/badge.svg)](https://github.com/liangliangyy/DjangoBlog/actions/workflows/django.yml) [![CodeQL](https://github.com/liangliangyy/DjangoBlog/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/liangliangyy/DjangoBlog/actions/workflows/codeql-analysis.yml) [![codecov](https://codecov.io/gh/liangliangyy/DjangoBlog/branch/master/graph/badge.svg)](https://codecov.io/gh/liangliangyy/DjangoBlog)  [![license](https://img.shields.io/github/license/liangliangyy/djangoblog.svg)]() [![simpleui](https://img.shields.io/badge/developing%20with-Simpleui-2077ff.svg)](https://github.com/newpanjing/simpleui)
 
 >基于`python3.10`和`Django3.2.5`开发。
+
+</div>
 
 ## 已完成功能
 - [x] 项目初始化创建
 - [x] 创建数据库表
 - [x] 迁移数据都到服务器
-- [ ] 前端页面
+- [x] 登录页面
 
 ## 安装
 ```git
@@ -55,3 +72,4 @@ python manage.py runserver
 - 【检测是否登录】：https://www.cnblogs.com/liuxuelin/p/14585677.html
 - 【AES加密、解密】：https://www.cnblogs.com/namejmj/p/14747491.html
 - 【FTP下载】：https://www.jianshu.com/p/055bbe9a2e7d
+- 【Simple UI】：https://simpleui.72wo.com/docs/simpleui/
