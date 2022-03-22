@@ -86,10 +86,10 @@ WSGI_APPLICATION = 'Sakura_Infinity.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'SaKura_Infinity',
-        'USER': 'root',
-        'PASSWORD': 'ranyong520',
-        'HOST': 'localhost',
+        'NAME': 'sakura_infinity',
+        'USER': 'sakura_infinity',
+        'PASSWORD': 'admin',
+        'HOST': '120.79.24.202',
         'PORT': 3306,
         'OPTIONS': {'charset': 'utf8'}
     }
