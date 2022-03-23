@@ -52,7 +52,7 @@ layui.use(['echarts'], function() {
 		},
 		xAxis: [{
 			type: 'category',
-			data: ['北京', '上海', '广州', '深圳', '香港', '澳门', '台湾'],
+			data: ['北京', '上海', '广州', '深圳', '重庆', '澳门', '台湾'],
 			axisLine: {
 				lineStyle: {
 					color: '#DCE2E8'

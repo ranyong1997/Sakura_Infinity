@@ -10,10 +10,8 @@
     <div class="pcoded-content">
         <div class="pcoded-inner-content">
             <!-- [ breadcrumb ] start -->
-
             <!-- [ breadcrumb ] end -->
             <div class="main-body">
-                <br>
                 <div class="page-wrapper">
                     <div class="row">
                         <!--  Count Data  -->
@@ -131,7 +129,19 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="card Recent-Users">
+                                <div class="card-header">
+                                    <h5>最近数据</h5>
+                                    <div class="card-block px-0 py-3">
+                                        <div class="layui-card-body">
+                                            <div id="line2" style="min-height:400px;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
+
                         <!--[ Recent Users ] end-->
                         <!-- [ statistics year chart ] start -->
                         <div class="col-xl-4 col-md-6">
@@ -169,15 +179,25 @@
                                             <i class="fas fa-book f-30 text-c-blue "></i>
                                         </div>
                                         <div class="col">
-                                            <h3 class="mt-2 f-w-300">测试6 <sub class="text-muted f-15 ">公告 ✨</sub>
+                                            <h3 class="mt-2 f-w-300"><sub class="text-muted f-15 ">公告 ✨</sub>
                                             </h3>
-                                            <span class="d-block text-uppercase">THIS WEEK</span>
+                                            <span class="d-block text-uppercase">一言</span>
+                                        </div>
+                                        <div class="layui-card" style="text-align: right">
+                                            <br/>
+                                            <div class="layui-card-header" style="text-align: center">
+                                                寄语
+                                            </div>
+                                            <div class="layui-card-body" style="line-height:30px;text-align: left">
+                                                原想将澎湃的爱平平稳稳放置你手心，奈何我徒有一股蛮劲，只顾向你跑去，一个不稳跌的满身脏兮兮。试图爬起的我，
+                                                心想你会不会笑我 " 献爱献的这样笨拙, 怎么不知避开爱里的埋伏 "
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -187,4 +207,7 @@
 
 <!-- Specific Page JS goes HERE  -->
 {% block javascripts %}
+    <script src="{% static 'component/layui/layui.js' %}"></script>
+    <script src="{% static 'component/pear/pear.js' %}"></script>
+    <script src="{% static 'view/echarts/script/line1.js' %}"></script>
 {% endblock javascripts %}
