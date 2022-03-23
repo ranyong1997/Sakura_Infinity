@@ -22,6 +22,7 @@ django-filter==21.1
 django-simpleui==2022.3.19
 django-timezone-field==4.2.3
 djangorestframework==3.13.1
+django-ninja==0.17.0
 docopt==0.6.2
 greenlet==1.1.2
 idna==3.3
@@ -49,3 +50,4 @@ urllib3==1.26.9
 vine==5.0.0
 wcwidth==0.2.5
 yarg==0.1.9
+
