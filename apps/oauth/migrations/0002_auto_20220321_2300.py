@@ -5,7 +5,6 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('oauth', '0001_initial'),
     ]
@@ -14,12 +13,14 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='users',
             name='dep',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='oauth.department', verbose_name='部门'),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE,
+                                    to='oauth.department', verbose_name='部门'),
         ),
         migrations.AddField(
             model_name='users',
             name='post',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='oauth.position', verbose_name='职位'),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE,
+                                    to='oauth.position', verbose_name='职位'),
         ),
         migrations.AlterField(
             model_name='department',

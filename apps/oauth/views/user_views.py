@@ -5,7 +5,6 @@ from django.db.models import Q
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 from django.core.paginator import Paginator
-
 from util.loginmixin import LoginMixin
 from oauth.forms import UserCreateForm, UserUpdateForm
 from oauth.models import Users

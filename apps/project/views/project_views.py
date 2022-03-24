@@ -1,8 +1,4 @@
 # -*- coding: utf-8 -*-
-# @File: project_views.py
-# @Author: HanWenLu
-# @E-mail: wenlupay@163.com
-# @Time: 2021/9/2  15:04
 
 # 项目详情视图 类
 
@@ -12,7 +8,6 @@ from django.views.generic import CreateView, ListView, DetailView, UpdateView, D
 from django.core.paginator import Paginator
 from project.forms.project_from import ProjectUpdateForm, ProjectCreateForm
 from project.models import Project
-
 from util.loginmixin import LoginMixin
 
 
@@ -32,17 +27,14 @@ class ProjectListView(LoginMixin, ListView):
         search = self.request.GET.get("search")
         order_by = self.request.GET.get("orderby")
         filter_isenabled = self.request.GET.get("created_by")
-
         if order_by:
             all_pro = Project.objects.all().order_by(order_by)
             self.order_field = order_by
         else:
             all_pro = Project.objects.all().order_by(self.order_field)
-
         if filter_isenabled:
             self.created_by = filter_isenabled
             all_pro = Project.objects.filter(isenabled=self.created_by)
-
         if search:
             # 项目名称 、创建人、项目负责人、项目负责人姓名查询
             all_pro = all_pro.filter(
@@ -50,7 +42,6 @@ class ProjectListView(LoginMixin, ListView):
                     prjcet_personliable__username__icontains=search) | Q(
                     prjcet_personliable__name__icontains=search))
             self.search_value = search
-
         self.count_total = all_pro.count()
         paginator = Paginator(all_pro.order_by(self.order_field), self.pagenum)
         page = self.request.GET.get('page')

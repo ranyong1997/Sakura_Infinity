@@ -7,7 +7,6 @@ from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
 from ..permissions import IsOwnerOrReadOnly
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication
-
 from element.models import Case
 from api.serializers import CaseListSerializer, CaseSerializer
 from util.jsresponse import JsResponse

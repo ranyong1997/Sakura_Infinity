@@ -16,8 +16,8 @@ class ProjectAdmin(admin.ModelAdmin):
     list_display = (
         id, 'project_name', 'isenabled', 'descr', 'version', 'deployinfos', 'prjcet_personliable',
         'createtime', 'updatetime', 'creator', 'updater')
-    search_fields = ('project_name', 'isenabled', 'version','creator')
-    list_filter = ('project_name', 'isenabled', 'version','creator')
+    search_fields = ('project_name', 'isenabled', 'version', 'creator')
+    list_filter = ('project_name', 'isenabled', 'version', 'creator')
     list_per_page = 20
 
     def save_model(self, request, obj, form, change):
@@ -25,6 +25,7 @@ class ProjectAdmin(admin.ModelAdmin):
             obj.creator = request.user
             obj.updater = request.user
         obj.save()
+
 
 @admin.register(DeployInfo)
 class DeployInfoAdmin(admin.ModelAdmin):
@@ -34,5 +35,5 @@ class DeployInfoAdmin(admin.ModelAdmin):
     ordering = ('id',)
     list_display = (id, 'prjname', 'prjalias', 'deploypath', 'depldescr')
     search_fields = ('prjname', 'prjalias',)
-    list_filter = ( 'prjname', 'prjalias')
+    list_filter = ('prjname', 'prjalias')
     list_per_page = 20

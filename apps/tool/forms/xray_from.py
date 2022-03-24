@@ -3,11 +3,9 @@ import os
 import re
 
 from django import forms
-
 from .. import tasks
 from ..models import CheckTask
 from util.loggers import logger
-
 from util.time_processing import plus_seconds
 
 
@@ -32,7 +30,6 @@ class XrayTaskForm(forms.ModelForm):
         """
         scan_type = self.cleaned_data.get("scan_type")
         SCAN_TYPE_CHOICE = ['webscan', 'servicescan', 'check', 'other']  # 必须和 model SCAN_TYPE_CHOICE一直
-
         if scan_type not in SCAN_TYPE_CHOICE:
             logger.error('新增扫描任务失败！扫描类型不支持！')
             raise forms.ValidationError("新增扫描任务失败！扫描类型不支持！")
@@ -41,7 +38,6 @@ class XrayTaskForm(forms.ModelForm):
 
     def save(self, commit=True):
         instance = forms.ModelForm.save(self, False)
-
         if commit:
             instance.creator = self.request.user
             instance.updater = self.request.user
@@ -52,5 +48,4 @@ class XrayTaskForm(forms.ModelForm):
             instance.task_id = tasks.xray_shell_task.delay(url, types)  # 执行异步任务
             instance.save()
             logger.info(f'新增扫描任务成功！{instance.check_name}')
-
         return instance

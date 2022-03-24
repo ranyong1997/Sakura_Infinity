@@ -6,7 +6,6 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
         ('project', '0001_initial'),
@@ -26,6 +25,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='project',
             name='prjcet_personliable',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='user_prjcet', to=settings.AUTH_USER_MODEL, verbose_name='所属负责人'),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL,
+                                    related_name='user_prjcet', to=settings.AUTH_USER_MODEL, verbose_name='所属负责人'),
         ),
     ]

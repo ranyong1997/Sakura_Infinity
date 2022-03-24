@@ -7,12 +7,10 @@ from django.db.models import Q
 from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect, FileResponse, Http404
 from django.views import View
-
 from django.views.generic import CreateView, ListView, DeleteView
 from django.core.paginator import Paginator
 from tool.forms.check_from import CheckTaskForm
 from tool.models import CheckTask
-
 from util.loginmixin import LoginMixin
 from util.loggers import logger
 from tool import tasks

@@ -5,7 +5,6 @@ from rest_framework import filters
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
-
 from ..serializers import OperateTypeSerializer
 from element.models import OperateType
 

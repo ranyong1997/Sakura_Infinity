@@ -4,9 +4,10 @@ import datetime
 import os
 
 from django.db import models
+from django.urls import reverse
+
 
 # Create your models here.
-from django.urls import reverse
 
 
 def get_photo_path(instance, filename):
@@ -18,7 +19,7 @@ def get_photo_path(instance, filename):
     """
 
     productionName = instance.check_name  # 获取文件名称
-    check_files = 'upload/checkfiles'    # 固定路径
+    check_files = 'upload/checkfiles'  # 固定路径
     today = datetime.datetime.today()
     year = today.year
     month = today.month

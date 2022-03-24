@@ -13,7 +13,6 @@ urlpatterns = [
     path('aes/', AesView.as_view(), name='aes'),  # 加解密
     path('ftp/', FtpView.as_view(), name='ftp'),  # ftp下载
     path('ftp_tool/', FtpToolView.as_view(), name='ftp_tool'),  # ftp工具下载
-
     path('xrayadd/', XrayTaskCreateView.as_view(), name='xrayadd'),  # 新增Xray扫描
     path('xraylist/', XrayTaskListView.as_view(), name='xraylist'),  # Xray扫描任务列表
     path('xray_delete/<int:pk>/', XrayTaskDeleteView.as_view(), name="xray_delete"),  # 删除扫描任务

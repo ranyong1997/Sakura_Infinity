@@ -6,7 +6,6 @@ import shutil
 from django.db.models import Q
 from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
-
 from django.views.generic import CreateView, ListView, DeleteView
 from django.core.paginator import Paginator
 from tool.forms.xray_from import XrayTaskForm
@@ -31,7 +30,6 @@ class XrayTaskListView(ListView):
         search = self.request.GET.get("search")
         order_by = self.request.GET.get("orderby")
         filter_state = self.request.GET.get("created_by")
-
         if order_by:
             # check_pro = CheckTask.objects.all().order_by(order_by)
             check_pro = CheckTask.objects.exclude(scan_type='check').order_by(order_by)
@@ -39,9 +37,7 @@ class XrayTaskListView(ListView):
         else:
             # check_pro = CheckTask.objects.all().order_by(self.order_field)
             check_pro = CheckTask.objects.exclude(scan_type='check').order_by(self.order_field)
-
         if filter_state:
-
             if filter_state == '有注入':
                 # 查询不等于 空并且  task_report 不为 NO
                 check_pro = CheckTask.objects.exclude(scan_type='check', ).filter(
@@ -49,16 +45,13 @@ class XrayTaskListView(ListView):
             else:
                 check_pro = CheckTask.objects.exclude(scan_type='check', ).filter(
                     Q(task_report='NO') | Q(task_report=''))
-
             self.created_by = filter_state
             check_pro = check_pro
-
         if search:
             # 任务名称 、创建人、
             check_pro = check_pro.filter(
                 Q(check_name__icontains=search) | Q(creator__icontains=search))
             self.search_value = search
-
         self.count_total = check_pro.count()
         paginator = Paginator(check_pro, self.pagenum)
         page = self.request.GET.get('page')
@@ -87,7 +80,6 @@ class XrayTaskCreateView(LoginMixin, CreateView):
         # Ensure the current `request` is provided to ProjectCreateForm.
         kwargs = super(XrayTaskCreateView, self).get_form_kwargs()
         kwargs.update({'request': self.request})
-
         return kwargs
 
 
@@ -110,9 +102,7 @@ class XrayTaskDeleteView(LoginMixin, DeleteView):
         success_url = self.get_success_url()
         flie_dir = self.object.task_report
         self.object.delete()
-
         # 删除目录文件
-
         try:
             if os.path.exists(flie_dir):
                 logger.info(f'{flie_dir} 删除目录文件成功!！')
@@ -121,5 +111,4 @@ class XrayTaskDeleteView(LoginMixin, DeleteView):
         except Exception as e:
             logger.error(e)
             return HttpResponseRedirect(success_url)
-
         return HttpResponseRedirect(success_url)

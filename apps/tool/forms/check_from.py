@@ -3,7 +3,6 @@ import os
 import re
 
 from django import forms
-
 from ..models import CheckTask
 from util.loggers import logger
 import datetime
@@ -60,9 +59,7 @@ class CheckTaskForm(forms.ModelForm):
         验证文件合法合法性
         :return:
         """
-
         f = self.cleaned_data.get("file")
-
         if f:
             # 支持的格式
             allow_suffix = ['tar', '7z', 'zip', 'gz', 'war', 'so', 'rar', 'bz2', 'arj', 'cab', 'lzh', 'iso', 'UUE',
@@ -85,18 +82,15 @@ class CheckTaskForm(forms.ModelForm):
 
     def save(self, commit=True):
         instance = forms.ModelForm.save(self, False)
-
         if commit:
             instance.creator = self.request.user
             instance.updater = self.request.user
             instance.task_state = 'runing'  # 上传时修改任务状态
             instance.task_start_time = plus_seconds(5)  # 当前时间+5秒 大约任务开始时间
-
             check_path = self.get_photo_path(instance)  # 处理扫描路径
             instance.task_id = tasks.check_shell_task.delay(check_path, instance.check_name)  # 执行异步任务
             instance.save()
             logger.info(f'新增扫描任务成功！{instance.check_name}')
-
         return instance
 
     def get_photo_path(self, instance):
@@ -109,7 +103,6 @@ class CheckTaskForm(forms.ModelForm):
         object_path = instance.file.path  # 项目路径
         productionName = instance.check_name  # 获取任务名称
         file = instance.file.name  # 获取文件
-
         check_files = 'upload/checkfiles'  # 固定路径
         today = datetime.datetime.today()
         year = today.year

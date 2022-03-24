@@ -5,7 +5,6 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('project', '0004_auto_20210818_1515'),
     ]
@@ -38,7 +37,8 @@ class Migration(migrations.Migration):
                 ('createtime', models.DateTimeField(auto_now_add=True, verbose_name='创建时间')),
                 ('updatetime', models.DateTimeField(auto_now=True, verbose_name='更新时间')),
                 ('maintainer', models.CharField(max_length=32, verbose_name='维护者')),
-                ('projcet', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='project.project', verbose_name='所属项目')),
+                ('projcet', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL,
+                                              to='project.project', verbose_name='所属项目')),
             ],
             options={
                 'verbose_name': '功能模块',

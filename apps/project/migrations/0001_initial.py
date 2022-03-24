@@ -6,7 +6,6 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -40,8 +39,11 @@ class Migration(migrations.Migration):
                 ('updatetime', models.DateTimeField(auto_now=True, verbose_name='更新时间')),
                 ('creator', models.CharField(max_length=32, verbose_name='创建人')),
                 ('Updater', models.CharField(max_length=32, verbose_name='更新人')),
-                ('deployinfos', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='project.deployinfo', verbose_name='部署信息')),
-                ('prjcet_personliable', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to=settings.AUTH_USER_MODEL, verbose_name='所属负责人')),
+                ('deployinfos', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL,
+                                                  to='project.deployinfo', verbose_name='部署信息')),
+                ('prjcet_personliable',
+                 models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL,
+                                   to=settings.AUTH_USER_MODEL, verbose_name='所属负责人')),
             ],
             options={
                 'verbose_name': '项目信息',

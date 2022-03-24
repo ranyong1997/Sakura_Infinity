@@ -1,8 +1,4 @@
 # -*- coding: utf-8 -*-
-# @File: dev_viesw.py
-# @Author: HanWenLu
-# @E-mail: wenlupay@163.com
-# @Time: 2021/9/2  15:09
 
 # 部署信息视图 类
 
@@ -12,7 +8,6 @@ from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 from django.core.paginator import Paginator
 from project.forms.dev_from import DevCreateForm, DevUpdateForm
 from project.models import DeployInfo
-
 from util.loginmixin import LoginMixin
 
 
@@ -32,23 +27,19 @@ class DevListView(LoginMixin, ListView):
         search = self.request.GET.get("search")
         order_by = self.request.GET.get("orderby")
         filter_isenabled = self.request.GET.get("created_by")
-
         if order_by:
             dev_pro = DeployInfo.objects.all().order_by(order_by)
             self.order_field = order_by
         else:
             dev_pro = DeployInfo.objects.all().order_by(self.order_field)
-
         if filter_isenabled:
             self.created_by = filter_isenabled
             dev_pro = DeployInfo.objects.filter(isenabled=self.created_by)
-
         if search:
             # 项目名称 、创建人、项目负责人、项目负责人姓名查询
             dev_pro = dev_pro.filter(
                 Q(prjname__icontains=search) | Q(prjalias__icontains=search))
             self.search_value = search
-
         self.count_total = dev_pro.count()
         paginator = Paginator(dev_pro, self.pagenum)
         page = self.request.GET.get('page')

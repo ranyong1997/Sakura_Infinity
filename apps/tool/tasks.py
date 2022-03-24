@@ -6,7 +6,6 @@ import time
 
 from django_celery_results.models import TaskResult
 from celery import shared_task
-
 from util.loggers import logger
 from Sakura_Infinity import settings
 from tool.models import CheckTask

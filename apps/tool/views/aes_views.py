@@ -5,7 +5,6 @@ from django.views import View
 
 from util.loginmixin import LoginMixin
 from Sakura_Infinity.settings import KEY, IV
-
 from util.aes_decrypt_encrypt import AesDecryptEncrypt
 from util.loggers import logger
 

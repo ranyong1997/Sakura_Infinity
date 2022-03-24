@@ -4,9 +4,7 @@ import os
 from django.http import FileResponse
 from django.shortcuts import render
 from django.views import View
-
 from util.loginmixin import LoginMixin
-
 from util.ftp_download import FtpDownload, zipDir, replace_char
 from util.loggers import logger
 from Sakura_Infinity.settings import FTP_PATH

@@ -1,7 +1,4 @@
 # -*- encoding: utf-8 -*-
-"""
-Copyright (c) 2019 - present AppSeed.us
-"""
 
 from django import forms
 from .models import Users
@@ -62,8 +59,6 @@ class UserCreateForm(forms.ModelForm):
 
     class Meta:
         model = Users
-        # exclude = ['last_login', 'date_joined', 'first_name','last_name','objects']
-        # fields = '__all__'
         fields = (
             'username', 'password', 'is_superuser', 'is_staff', 'email', 'name', 'gender', 'mobile', 'birthday', 'dep',
             'post',)
@@ -112,8 +107,6 @@ class UserCreateForm(forms.ModelForm):
 class UserUpdateForm(forms.ModelForm):
     class Meta:
         model = Users
-        # exclude = ['last_login', 'date_joined', 'first_name','last_name','objects']
-        # fields = '__all__'
         fields = (
             'username', 'is_superuser', 'is_staff', 'email', 'name', 'gender', 'mobile', 'birthday', 'dep', 'post',)
 

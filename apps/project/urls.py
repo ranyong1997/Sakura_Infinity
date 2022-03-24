@@ -1,11 +1,6 @@
 # -*- coding: utf-8 -*-
-# @File: urls.py
-# @Author: HanWenLu
-# @E-mail: wenlupay@163.com
-# @Time: 2021/8/12  17:17
 
 from django.urls import path
-
 from project.views.project_views import *
 from project.views.dev_views import *
 from project.views.module_views import *

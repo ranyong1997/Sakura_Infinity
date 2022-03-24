@@ -2,7 +2,6 @@
 
 
 from rest_framework import serializers
-
 from element.models import Case, LocationType, OperateType, CaseSte
 from project.models import Module, Project
 
