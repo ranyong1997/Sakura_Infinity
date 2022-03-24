@@ -98,7 +98,7 @@
         getOr: id,
         getOrThunk: call,
         getOrDie: function (msg) {
-          throw new Error(msg || 'error: getOrDie called on none.');
+          throw new Error(msg || 'errors: getOrDie called on none.');
         },
         getOrNull: constant(null),
         getOrUndefined: constant(undefined),

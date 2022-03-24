@@ -46,7 +46,7 @@ layui.define(['jquery', 'layer'], function (exports) {
         },
 
         defaultError: {
-            message: 'An error has occurred!',
+            message: 'An errors has occurred!',
             details: 'Error detail not sent by server.'
         },
 

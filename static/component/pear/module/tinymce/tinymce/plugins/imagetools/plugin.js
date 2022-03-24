@@ -60,7 +60,7 @@
         getOr: id,
         getOrThunk: call,
         getOrDie: function (msg) {
-          throw new Error(msg || 'error: getOrDie called on none.');
+          throw new Error(msg || 'errors: getOrDie called on none.');
         },
         getOrNull: constant(null),
         getOrUndefined: constant(undefined),
@@ -719,10 +719,10 @@
     var getHttpErrorMsg = function (status) {
       var message = find(friendlyHttpErrors, function (error) {
         return status === error.code;
-      }).fold(constant('Unknown ImageProxy error'), function (error) {
+      }).fold(constant('Unknown ImageProxy errors'), function (error) {
         return error.message;
       });
-      return 'ImageProxy HTTP error: ' + message;
+      return 'ImageProxy HTTP errors: ' + message;
     };
     var handleHttpError = function (status) {
       var message = getHttpErrorMsg(status);
@@ -731,7 +731,7 @@
     var getServiceErrorMsg = function (type) {
       return find(friendlyServiceErrors, function (error) {
         return error.type === type;
-      }).fold(constant('Unknown service error'), function (error) {
+      }).fold(constant('Unknown service errors'), function (error) {
         return error.message;
       });
     };
@@ -742,8 +742,8 @@
           'error',
           'type'
         ]).map(getServiceErrorMsg);
-      }).getOr('Invalid JSON in service error message');
-      return 'ImageProxy Service error: ' + errorMsg;
+      }).getOr('Invalid JSON in service errors message');
+      return 'ImageProxy Service errors: ' + errorMsg;
     };
     var handleServiceError = function (blob) {
       return readBlobText(blob).then(function (text) {

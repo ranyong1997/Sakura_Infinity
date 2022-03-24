@@ -454,7 +454,7 @@ $.BootstrapTable = class extends $.BootstrapTable {
     }
 
     if ((this.options.cookieIdTable === '') || (this.options.cookieExpire === '') || (!UtilsCookie.cookieEnabled())) {
-      console.error('Configuration error. Please review the cookieIdTable and the cookieExpire property. If the properties are correct, then this browser does not support cookies.')
+      console.error('Configuration errors. Please review the cookieIdTable and the cookieExpire property. If the properties are correct, then this browser does not support cookies.')
       this.options.cookie = false // Make sure that the cookie extension is disabled
       return
     }

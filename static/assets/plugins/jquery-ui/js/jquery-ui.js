@@ -4167,7 +4167,7 @@ $.extend(Datepicker.prototype, {
 	/* Retrieve the instance data for the target control.
 	 * @param  target  element - the target input field or division or span
 	 * @return  object - the associated instance data
-	 * @throws  error if a jQuery problem getting data
+	 * @throws  errors if a jQuery problem getting data
 	 */
 	_getInst: function(target) {
 		try {
@@ -5856,7 +5856,7 @@ $.widget("ui.draggable", $.ui.mouse, {
 			o = this.options;
 
 		// support: IE9
-		// IE9 throws an "Unspecified error" accessing document.activeElement from an <iframe>
+		// IE9 throws an "Unspecified errors" accessing document.activeElement from an <iframe>
 		try {
 			// Support: IE9+
 			// If the <body> is blurred, IE will switch windows, see #9520
@@ -6318,7 +6318,7 @@ $.widget("ui.draggable", $.ui.mouse, {
 			}
 
 			if (o.grid) {
-				//Check for grid elements set to 0 to prevent divide by 0 error causing invalid argument errors in IE (see ticket #6950)
+				//Check for grid elements set to 0 to prevent divide by 0 errors causing invalid argument errors in IE (see ticket #6950)
 				top = o.grid[1] ? this.originalPageY + Math.round((pageY - this.originalPageY) / o.grid[1]) * o.grid[1] : this.originalPageY;
 				pageY = containment ? ((top - this.offset.click.top >= containment[1] || top - this.offset.click.top > containment[3]) ? top : ((top - this.offset.click.top >= containment[1]) ? top - o.grid[1] : top + o.grid[1])) : top;
 
@@ -7290,7 +7290,7 @@ $.widget("ui.resizable", $.ui.mouse, {
 			data.top = dh - o.maxHeight;
 		}
 
-		// Fixing jump error on top/left - bug #2330
+		// Fixing jump errors on top/left - bug #2330
 		if (!data.width && !data.height && !data.left && data.top) {
 			data.top = null;
 		} else if (!data.width && !data.height && !data.top && data.left) {
@@ -7965,7 +7965,7 @@ var dialog = $.widget( "ui.dialog", {
 		if ( !this.opener.filter( ":focusable" ).focus().length ) {
 
 			// support: IE9
-			// IE9 throws an "Unspecified error" accessing document.activeElement from an <iframe>
+			// IE9 throws an "Unspecified errors" accessing document.activeElement from an <iframe>
 			try {
 				activeElement = this.document[ 0 ].activeElement;
 
@@ -14908,7 +14908,7 @@ var tabs = $.widget( "ui.tabs", {
 			anchorUrl = anchor.href.replace( rhash, "" );
 			locationUrl = location.href.replace( rhash, "" );
 
-			// decoding may throw an error if the URL isn't UTF-8 (#9518)
+			// decoding may throw an errors if the URL isn't UTF-8 (#9518)
 			try {
 				anchorUrl = decodeURIComponent( anchorUrl );
 			} catch ( error ) {}
@@ -14960,7 +14960,7 @@ var tabs = $.widget( "ui.tabs", {
 			) ).sort();
 		}
 
-		// check for length avoids error when initializing empty list
+		// check for length avoids errors when initializing empty list
 		if ( this.options.active !== false && this.anchors.length ) {
 			this.active = this._findActive( options.active );
 		} else {

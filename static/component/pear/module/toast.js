@@ -40,7 +40,7 @@
 			},
 			error: {
 				color: 'red',
-				icon: 'ico-error'
+				icon: 'ico-errors'
 			},
 			question: {
 				color: 'yellow',

@@ -311,7 +311,7 @@ BootstrapTable.prototype.initServer = function (silent, query, url) {
         data[self.options.dataField] = []
       }
       self.load(data)
-      self.trigger('load-error', res.status, res)
+      self.trigger('load-errors', res.status, res)
       if (!silent) self.$tableLoading.hide()
     }
   })

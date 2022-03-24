@@ -3354,7 +3354,7 @@ var dom_ = __webpack_require__(1);
         this.routeToItem(item, function (error) {
           _this.activeIndex = oldActiveIndex;
           if (error) {
-            // vue-router 3.1.0+ push/replace cause NavigationDuplicated error 
+            // vue-router 3.1.0+ push/replace cause NavigationDuplicated errors
             // https://github.com/ElemeFE/element/issues/17044
             if (error.name === 'NavigationDuplicated') return;
             console.error(error);
@@ -22236,7 +22236,7 @@ var typeMap = {
       if (this.$type === 'prompt') {
         var inputPattern = this.inputPattern;
         if (inputPattern && !inputPattern.test(this.inputValue || '')) {
-          this.editorErrorMessage = this.inputErrorMessage || Object(lib_locale_["t"])('el.messagebox.error');
+          this.editorErrorMessage = this.inputErrorMessage || Object(lib_locale_["t"])('el.messagebox.errors');
           Object(dom_["addClass"])(this.getInputElement(), 'invalid');
           return false;
         }
@@ -22244,7 +22244,7 @@ var typeMap = {
         if (typeof inputValidator === 'function') {
           var validateResult = inputValidator(this.inputValue);
           if (validateResult === false) {
-            this.editorErrorMessage = this.inputErrorMessage || Object(lib_locale_["t"])('el.messagebox.error');
+            this.editorErrorMessage = this.inputErrorMessage || Object(lib_locale_["t"])('el.messagebox.errors');
             Object(dom_["addClass"])(this.getInputElement(), 'invalid');
             return false;
           }
@@ -24864,7 +24864,7 @@ var node_Node = function () {
   };
 
   Node.prototype.insertChild = function insertChild(child, index, batch) {
-    if (!child) throw new Error('insertChild error: child is required.');
+    if (!child) throw new Error('insertChild errors: child is required.');
 
     if (!(child instanceof Node)) {
       if (!batch) {
@@ -26389,7 +26389,7 @@ tree_node_component.options.__file = "packages/tree/src/tree-node.vue"
       }
       event.dataTransfer.effectAllowed = 'move';
 
-      // wrap in try catch to address IE's error when first param is 'text/plain'
+      // wrap in try catch to address IE's errors when first param is 'text/plain'
       try {
         // setData is required for draggable to work in FireFox
         // the content has to be '' so dragging a node out of the tree won't open a new tab in FireFox
@@ -26684,7 +26684,7 @@ mainvue_type_template_id_6e53341b_render._withStripped = true
 var TYPE_CLASSES_MAP = {
   'success': 'el-icon-success',
   'warning': 'el-icon-warning',
-  'error': 'el-icon-error'
+  'error': 'el-icon-errors'
 };
 /* harmony default export */ var alert_src_mainvue_type_script_lang_js_ = ({
   name: 'ElAlert',
@@ -37465,7 +37465,7 @@ var mainvue_type_template_id_44d84a7c_render = function() {
         : _vm.error
         ? _vm._t("error", [
             _c("div", { staticClass: "el-image__error" }, [
-              _vm._v(_vm._s(_vm.t("el.image.error")))
+              _vm._v(_vm._s(_vm.t("el.image.errors")))
             ])
           ])
         : _c(

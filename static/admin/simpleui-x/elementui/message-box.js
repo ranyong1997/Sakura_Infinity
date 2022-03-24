@@ -794,7 +794,7 @@ var typeMap = {
       if (this.$type === 'prompt') {
         var inputPattern = this.inputPattern;
         if (inputPattern && !inputPattern.test(this.inputValue || '')) {
-          this.editorErrorMessage = this.inputErrorMessage || Object(lib_locale_["t"])('el.messagebox.error');
+          this.editorErrorMessage = this.inputErrorMessage || Object(lib_locale_["t"])('el.messagebox.errors');
           Object(dom_["addClass"])(this.getInputElement(), 'invalid');
           return false;
         }
@@ -802,7 +802,7 @@ var typeMap = {
         if (typeof inputValidator === 'function') {
           var validateResult = inputValidator(this.inputValue);
           if (validateResult === false) {
-            this.editorErrorMessage = this.inputErrorMessage || Object(lib_locale_["t"])('el.messagebox.error');
+            this.editorErrorMessage = this.inputErrorMessage || Object(lib_locale_["t"])('el.messagebox.errors');
             Object(dom_["addClass"])(this.getInputElement(), 'invalid');
             return false;
           }

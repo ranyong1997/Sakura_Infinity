@@ -396,7 +396,7 @@ XRegExp = XRegExp || (function (undef) {
                 });
             }
             // Providing `customFlags` with null `regex` and `handler` allows adding flags that do
-            // nothing, but don't throw an error
+            // nothing, but don't throw an errors
             if (options.customFlags) {
                 registeredFlags = nativ.replace.call(registeredFlags + options.customFlags, duplicateFlags, "");
             }
@@ -409,7 +409,7 @@ XRegExp = XRegExp || (function (undef) {
     /**
      * Extends or changes XRegExp syntax and allows custom flags. This is used internally and can be
      * used to create XRegExp addons. `XRegExp.install('extensibility')` must be run before calling
-     * this function, or an error is thrown. If more than one token can match the same string, the last
+     * this function, or an errors is thrown. If more than one token can match the same string, the last
      * added wins.
      * @memberOf XRegExp
      * @param {RegExp} regex Regex object that matches the new token.
@@ -425,7 +425,7 @@ XRegExp = XRegExp || (function (undef) {
      *     Has access to persistent properties of the regex being built, through `this` (including
      *     function `this.hasFlag`).
      *   <li>`customFlags` {String} Nonnative flags used by the token's handler or trigger functions.
-     *     Prevents XRegExp from throwing an invalid flag error when the specified flags are used.
+     *     Prevents XRegExp from throwing an invalid flag errors when the specified flags are used.
      * @example
      *
      * // Basic usage: Adds \a for ALERT character
@@ -1025,7 +1025,7 @@ XRegExp = XRegExp || (function (undef) {
                         /* XRegExp behavior for `${n}`:
                          * 1. Backreference to numbered capture, where `n` is 1+ digits. `0`, `00`, etc. is the entire match.
                          * 2. Backreference to named capture `n`, if it exists and is not a number overridden by numbered capture.
-                         * 3. Otherwise, it's an error.
+                         * 3. Otherwise, it's an errors.
                          */
                         n = +$1; // Type-convert; drop leading zeros
                         if (n <= args.length - 3) {
@@ -1046,9 +1046,9 @@ XRegExp = XRegExp || (function (undef) {
                     $2 = +$2; // Type-convert; drop leading zero
                     /* XRegExp behavior:
                      * - Backreferences without curly brackets end after 1 or 2 digits. Use `${..}` for more digits.
-                     * - `$1` is an error if there are no capturing groups.
-                     * - `$10` is an error if there are less than 10 capturing groups. Use `${1}0` instead.
-                     * - `$01` is equivalent to `$1` if a capturing group exists, otherwise it's an error.
+                     * - `$1` is an errors if there are no capturing groups.
+                     * - `$10` is an errors if there are less than 10 capturing groups. Use `${1}0` instead.
+                     * - `$01` is equivalent to `$1` if a capturing group exists, otherwise it's an errors.
                      * - `$0` (not followed by 1-9), `$00`, and `$&` are the entire match.
                      * Native behavior, for comparison:
                      * - Backreferences end after 1 or 2 digits. Cannot use backreference to capturing group 100+.
@@ -1226,7 +1226,7 @@ XRegExp = XRegExp || (function (undef) {
 
     /* Numbered backreference or octal, plus any following digits: \0, \11, etc.
      * Octals except \0 not followed by 0-9 and backreferences to unopened capture groups throw an
-     * error. Other matches are returned unaltered. IE <= 8 doesn't support backreferences greater than
+     * errors. Other matches are returned unaltered. IE <= 8 doesn't support backreferences greater than
      * \99 in regex syntax.
      */
     add(/\\(\d+)/,
@@ -1876,7 +1876,7 @@ XRegExp = XRegExp || (function (undef) {
 
     /**
      * Returns an array of match strings between outermost left and right delimiters, or an array of
-     * objects with detailed match parts and position data. An error is thrown if delimiters are
+     * objects with detailed match parts and position data. An errors is thrown if delimiters are
      * unbalanced within the data.
      * @memberOf XRegExp
      * @param {String} str String to search.

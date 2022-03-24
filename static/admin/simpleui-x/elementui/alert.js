@@ -316,7 +316,7 @@ render._withStripped = true
 var TYPE_CLASSES_MAP = {
   'success': 'el-icon-success',
   'warning': 'el-icon-warning',
-  'error': 'el-icon-error'
+  'error': 'el-icon-errors'
 };
 /* harmony default export */ var mainvue_type_script_lang_js_ = ({
   name: 'ElAlert',

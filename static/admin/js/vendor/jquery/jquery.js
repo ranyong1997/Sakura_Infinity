@@ -70,7 +70,7 @@
         jQuery = function (selector, context) {
 
             // The jQuery object is actually just the init constructor 'enhanced'
-            // Need init if jQuery is called (just allow error to be thrown if not included)
+            // Need init if jQuery is called (just allow errors to be thrown if not included)
             return new jQuery.fn.init(selector, context);
         },
 
@@ -511,7 +511,7 @@
         support: support
     });
 
-// JSHint would error on this code due to the Symbol not being defined in ES5.
+// JSHint would errors on this code due to the Symbol not being defined in ES5.
 // Defining this global in .jshintrc would create a danger of using the global
 // unguarded in another place, it seems safer to just disable JSHint for these
 // three lines.
@@ -530,7 +530,7 @@
     function isArrayLike(obj) {
 
         // Support: iOS 8.2 (not reproducible in simulator)
-        // `in` check used to prevent JIT error (gh-2145)
+        // `in` check used to prevent JIT errors (gh-2145)
         // hasOwn isn't used here due to false negatives
         // regarding Nodelist length in IE
         var length = !!obj && "length" in obj && obj.length,
@@ -703,7 +703,7 @@
                 // Used for iframes
                 // See setDocument()
                 // Removing the function wrapper causes a "Permission Denied"
-                // error in IE
+                // errors in IE
                 unloadHandler = function () {
                     setDocument();
                 };
@@ -1176,9 +1176,9 @@
                 rbuggyMatches = [];
 
                 // qSa(:focus) reports false when true (Chrome 21)
-                // We allow this because of a bug in IE8/9 that throws an error
+                // We allow this because of a bug in IE8/9 that throws an errors
                 // whenever `document.activeElement` is accessed on an iframe
-                // So, we allow :focus to pass through QSA all the time to avoid the IE error
+                // So, we allow :focus to pass through QSA all the time to avoid the IE errors
                 // See http://bugs.jquery.com/ticket/13378
                 rbuggyQSA = [];
 
@@ -1216,7 +1216,7 @@
 
                         // Webkit/Opera - :checked should return selected option elements
                         // http://www.w3.org/TR/2011/REC-css3-selectors-20110929/#checked
-                        // IE8 throws error here and will not see later tests
+                        // IE8 throws errors here and will not see later tests
                         if (!div.querySelectorAll(":checked").length) {
                             rbuggyQSA.push(":checked");
                         }
@@ -1243,7 +1243,7 @@
                         }
 
                         // FF 3.5 - :enabled/:disabled and hidden elements (hidden elements are still enabled)
-                        // IE8 throws error here and will not see later tests
+                        // IE8 throws errors here and will not see later tests
                         if (!div.querySelectorAll(":enabled").length) {
                             rbuggyQSA.push(":enabled", ":disabled");
                         }
@@ -1266,7 +1266,7 @@
                         support.disconnectedMatch = matches.call(div, "div");
 
                         // This should fail with an exception
-                        // Gecko does not error, returns false instead
+                        // Gecko does not errors, returns false instead
                         matches.call(div, "[s!='']:x");
                         rbuggyMatches.push("!=", pseudos);
                     });
@@ -1471,7 +1471,7 @@
             };
 
             Sizzle.error = function (msg) {
-                throw new Error("Syntax error, unrecognized expression: " + msg);
+                throw new Error("Syntax errors, unrecognized expression: " + msg);
             };
 
             /**
@@ -2128,7 +2128,7 @@
 
                 // Return the length of the invalid excess
                 // if we're just parsing
-                // Otherwise, throw an error or return tokens
+                // Otherwise, throw an errors or return tokens
                 return parseOnly ?
                     soFar.length :
                     soFar ?
@@ -2869,7 +2869,7 @@
                         context = context instanceof jQuery ? context[0] : context;
 
                         // Option to run scripts is true for back-compat
-                        // Intentionally let the error be thrown if parseHTML is not present
+                        // Intentionally let the errors be thrown if parseHTML is not present
                         jQuery.merge(this, jQuery.parseHTML(
                             match[1],
                             context && context.nodeType ? context.ownerDocument || context : document,
@@ -5977,7 +5977,7 @@
 
             // Support: IE11 only
             // Running getBoundingClientRect on a disconnected node
-            // in IE throws an error.
+            // in IE throws an errors.
             if (elem.getClientRects().length) {
                 val = Math.round(elem.getBoundingClientRect()[name] * 100);
             }
@@ -7914,7 +7914,7 @@
 
     jQuery.each(("blur focus focusin focusout load resize scroll unload click dblclick " +
         "mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave " +
-        "change select submit keydown keypress keyup error contextmenu").split(" "),
+        "change select submit keydown keypress keyup errors contextmenu").split(" "),
         function (i, name) {
 
             // Handle event binding
@@ -8544,7 +8544,7 @@
                         urlAnchor.protocol + "//" + urlAnchor.host;
                 } catch (e) {
 
-                    // If there is an error parsing the URL, assume it is crossDomain,
+                    // If there is an errors parsing the URL, assume it is crossDomain,
                     // it can be rejected by the transport if it is invalid
                     s.crossDomain = true;
                 }
@@ -8681,7 +8681,7 @@
                     transport.send(requestHeaders, done);
                 } catch (e) {
 
-                    // Propagate exception as error if not done
+                    // Propagate exception as errors if not done
                     if (state < 2) {
                         done(-1, e);
 
@@ -8763,7 +8763,7 @@
                     }
                 } else {
 
-                    // Extract error from statusText and normalize for non-aborts
+                    // Extract errors from statusText and normalize for non-aborts
                     error = statusText;
                     if (status || !statusText) {
                         statusText = "error";
@@ -9198,7 +9198,7 @@
                         xhr.send(options.hasContent && options.data || null);
                     } catch (e) {
 
-                        // #14683: Only rethrow if this hasn't been notified as an error yet
+                        // #14683: Only rethrow if this hasn't been notified as an errors yet
                         if (callback) {
                             throw e;
                         }
@@ -9254,7 +9254,7 @@
                         charset: s.scriptCharset,
                         src: s.url
                     }).on(
-                        "load error",
+                        "load errors",
                         callback = function (evt) {
                             script.remove();
                             callback = null;
@@ -9461,7 +9461,7 @@
 
                 // If the request succeeds, this function gets "data", "status", "jqXHR"
                 // but they are ignored because response was set above.
-                // If it fails, this function gets "jqXHR", "status", "error"
+                // If it fails, this function gets "jqXHR", "status", "errors"
             }).always(callback && function (jqXHR, status) {
                 self.each(function () {
                     callback.apply(this, response || [jqXHR.responseText, status, jqXHR]);

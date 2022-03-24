@@ -186,7 +186,7 @@
         getOr: id,
         getOrThunk: call,
         getOrDie: function (msg) {
-          throw new Error(msg || 'error: getOrDie called on none.');
+          throw new Error(msg || 'errors: getOrDie called on none.');
         },
         getOrNull: constant(null),
         getOrUndefined: constant(undefined),
@@ -5493,7 +5493,7 @@
       return val !== undefined ? val : support.attributes || !documentIsHTML ? elem.getAttribute(name) : (val = elem.getAttributeNode(name)) && val.specified ? val.value : null;
     };
     Sizzle.error = function (msg) {
-      throw new Error('Syntax error, unrecognized expression: ' + msg);
+      throw new Error('Syntax errors, unrecognized expression: ' + msg);
     };
     Sizzle.uniqueSort = function (results) {
       var elem, duplicates = [], j = 0, i = 0;
@@ -20062,7 +20062,7 @@
           progress(e.loaded / e.total * 100);
         };
         xhr.onerror = function () {
-          failure('Image upload failed due to a XHR Transport error. Code: ' + xhr.status);
+          failure('Image upload failed due to a XHR Transport errors. Code: ' + xhr.status);
         };
         xhr.onload = function () {
           if (xhr.status < 200 || xhr.status >= 300) {
@@ -29606,7 +29606,7 @@
         xhrArgs.success = function (c, x) {
           c = JSONUtils.parse(c);
           if (typeof c === 'undefined') {
-            c = { error: 'JSON Parse error.' };
+            c = { error: 'JSON Parse errors.' };
           }
           if (c.error) {
             ecb.call(xhrArgs.error_scope || xhrArgs.scope, c.error, x);

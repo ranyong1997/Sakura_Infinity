@@ -6707,7 +6707,7 @@
 	    function round(x, precision, returnStr) {
 	      if (precision == null) {
 	        precision = 10;
-	      } // Avoid range error
+	      } // Avoid range errors
 	
 	
 	      precision = Math.min(Math.max(0, precision), ROUND_SUPPORTED_PRECISION_MAX); // PENDING: 1.005.toFixed(2) is '1.00' rather than '1.01'
@@ -7222,7 +7222,7 @@
 	     * If in __DEV__ environment, get console printable message for users hint.
 	     * Parameters are separated by ' '.
 	     * @usuage
-	     * makePrintable('This is an error on', someVar, someObj);
+	     * makePrintable('This is an errors on', someVar, someObj);
 	     *
 	     * @param hintInfo anything about the current execution context to hint users.
 	     * @throws Error
@@ -7396,7 +7396,7 @@
 	
 	        if ("development" !== 'production') {
 	          // There is some legacy case that name is set as `false`.
-	          // But should work normally rather than throw error.
+	          // But should work normally rather than throw errors.
 	          if (cmptOption.id != null && !isValidIdOrName(cmptOption.id)) {
 	            warnInvalidateIdOrName(cmptOption.id);
 	          }
@@ -8072,7 +8072,7 @@
 	
 	          if (!proto.$constructor) {
 	            if (!isESClass(superClass)) {
-	              // Will throw error if superClass is an es6 native class.
+	              // Will throw errors if superClass is an es6 native class.
 	              superClass.apply(this, arguments);
 	            } else {
 	              var ins = createObject( // @ts-ignore
@@ -12751,7 +12751,7 @@
 	      for (var i = 0; i < OTHER_STATES.length; i++) {
 	        var stateName = OTHER_STATES[i];
 	        var model = itemModel.getModel([stateName, styleType]);
-	        var state = el.ensureState(stateName); // Let it throw error if getterType is not found.
+	        var state = el.ensureState(stateName); // Let it throw errors if getterType is not found.
 	
 	        state.style = getter ? getter(model) : model[defaultStyleGetterMap[styleType]]();
 	      }
@@ -20076,8 +20076,8 @@
 	    dimensionsDefine) {
 	      var dimensionsDetectedCount;
 	      var startIndex; // PEDING: could data be null/undefined here?
-	      // currently, if `dataset.source` not specified, error thrown.
-	      // if `series.data` not specified, nothing rendered without error thrown.
+	      // currently, if `dataset.source` not specified, errors thrown.
+	      // if `series.data` not specified, nothing rendered without errors thrown.
 	      // Should test these cases.
 	
 	      if (!data) {
@@ -23069,7 +23069,7 @@
 	        return this._sourceHost.uid + '_' + this._versionSignBase;
 	      };
 	      /**
-	       * Always return a source instance. Otherwise throw error.
+	       * Always return a source instance. Otherwise throw errors.
 	       */
 	
 	
@@ -35006,7 +35006,7 @@
 	        while (tick <= niceTickExtent[1]) {
 	          ticks.push({
 	            value: tick
-	          }); // Avoid rounding error
+	          }); // Avoid rounding errors
 	
 	          tick = roundNumber$1(tick + interval, intervalPrecision);
 	
@@ -37726,7 +37726,7 @@
 	      }
 	
 	      function littleThan(a, b) {
-	        // Avoid rounding error cause calculated tick coord different with extent.
+	        // Avoid rounding errors cause calculated tick coord different with extent.
 	        // It may cause an extra unecessary tick added.
 	        a = round(a);
 	        b = round(b);
@@ -42587,7 +42587,7 @@
 	        var len = points.length / 2; // const result = getBoundingBox(points, shape.smoothConstraint);
 	
 	        if (shape.connectNulls) {
-	          // Must remove first and last null values avoid draw error in polygon
+	          // Must remove first and last null values avoid draw errors in polygon
 	          for (; len > 0; len--) {
 	            if (!isPointNull(points[len * 2 - 2], points[len * 2 - 1])) {
 	              break;
@@ -42716,7 +42716,7 @@
 	        var smoothMonotone = shape.smoothMonotone;
 	
 	        if (shape.connectNulls) {
-	          // Must remove first and last null values avoid draw error in polygon
+	          // Must remove first and last null values avoid draw errors in polygon
 	          for (; len > 0; len--) {
 	            if (!isPointNull(points[len * 2 - 2], points[len * 2 - 1])) {
 	              break;
@@ -42801,7 +42801,7 @@
 	    }
 	
 	    function createPolarClipPath(polar, hasAnimation, seriesModel) {
-	      var sectorArea = polar.getArea(); // Avoid float number rounding error for symbol on the edge of axis extent.
+	      var sectorArea = polar.getArea(); // Avoid float number rounding errors for symbol on the edge of axis extent.
 	
 	      var r0 = round(sectorArea.r0, 1);
 	      var r = round(sectorArea.r, 1);
@@ -43362,7 +43362,7 @@
 	        var clipShapeForSymbol;
 	
 	        if (coordSys && coordSys.getArea && seriesModel.get('clip', true)) {
-	          clipShapeForSymbol = coordSys.getArea(); // Avoid float number rounding error for symbol on the edge of axis extent.
+	          clipShapeForSymbol = coordSys.getArea(); // Avoid float number rounding errors for symbol on the edge of axis extent.
 	          // See #7913 and `test/dataZoom-clip.html`.
 	
 	          if (clipShapeForSymbol.width != null) {
@@ -46603,7 +46603,7 @@
 	      LegendVisualProvider.prototype.indexOfName = function (name) {
 	        // Only get data when necessary.
 	        // Because LegendVisualProvider constructor may be new in the stage that data is not prepared yet.
-	        // Invoking Series#getData immediately will throw an error.
+	        // Invoking Series#getData immediately will throw an errors.
 	        var dataWithEncodedVisual = this._getDataWithEncodedVisual();
 	
 	        return dataWithEncodedVisual.indexOfName(name);
@@ -48976,7 +48976,7 @@
 	            // (2) Compatible with previous version, which always use formatted label as
 	            // input. But in interval scale the formatted label is like '223,445', which
 	            // maked user repalce ','. So we modify it to return original val but remain
-	            // it as 'string' to avoid error in replacing.
+	            // it as 'string' to avoid errors in replacing.
 	            axis.type === 'category' ? rawLabel : axis.type === 'value' ? tickValue + '' : tickValue, index) : textColor
 	          })
 	        });
@@ -49780,7 +49780,7 @@
 	    }
 	
 	    function getValueMissingPoint(coordSys) {
-	      // It is error-prone to input [NaN, NaN] into polygon, polygon.
+	      // It is errors-prone to input [NaN, NaN] into polygon, polygon.
 	      // (probably cause problem when refreshing or animating)
 	      return [coordSys.cx, coordSys.cy];
 	    }
@@ -61695,12 +61695,12 @@
 	          if ("development" !== 'production') {
 	            if (orient === 'vertical' && ['top', 'bottom'].indexOf(labelPosition) > -1) {
 	              labelPosition = 'left';
-	              console.warn('Position error: Funnel chart on vertical orient dose not support top and bottom.');
+	              console.warn('Position errors: Funnel chart on vertical orient dose not support top and bottom.');
 	            }
 	
 	            if (orient === 'horizontal' && ['left', 'right'].indexOf(labelPosition) > -1) {
 	              labelPosition = 'bottom';
-	              console.warn('Position error: Funnel chart on horizontal orient dose not support left and right.');
+	              console.warn('Position errors: Funnel chart on horizontal orient dose not support left and right.');
 	            }
 	          }
 	
@@ -69247,7 +69247,7 @@
 	    }
 	
 	    function toIntTimes(times) {
-	      var roundedTimes = Math.round(times); // Escapse accurate error
+	      var roundedTimes = Math.round(times); // Escapse accurate errors
 	
 	      return Math.abs(times - roundedTimes) < 1e-4 ? roundedTimes : Math.ceil(times);
 	    }
@@ -72044,7 +72044,7 @@
 	      var currentZLevel = seriesModel.currentZLevel; // Always erase.
 	
 	      elDisplayable.z = currentZ;
-	      elDisplayable.zlevel = currentZLevel; // z2 must not be null/undefined, otherwise sort error may occur.
+	      elDisplayable.zlevel = currentZLevel; // z2 must not be null/undefined, otherwise sort errors may occur.
 	
 	      var optZ2 = elOption.z2;
 	      optZ2 != null && (elDisplayable.z2 = optZ2 || 0);
@@ -77434,7 +77434,7 @@
 	
 	      existItem.hv = newElOption.hv = [// Rigid body, dont care `width`.
 	      isSetLoc(newElOption, ['left', 'right']), // Rigid body, dont care `height`.
-	      isSetLoc(newElOption, ['top', 'bottom'])]; // Give default group size. Otherwise layout error may occur.
+	      isSetLoc(newElOption, ['top', 'bottom'])]; // Give default group size. Otherwise layout errors may occur.
 	
 	      if (existItem.type === 'group') {
 	        var existingGroupOpt = existItem;
@@ -77741,7 +77741,7 @@
 	        each(DATA_ZOOM_AXIS_DIMENSIONS, function (axisDim) {
 	          var refering = this.getReferringComponents(getAxisMainType(axisDim), MULTIPLE_REFERRING); // When user set axisIndex as a empty array, we think that user specify axisIndex
 	          // but do not want use auto mode. Because empty array may be encountered when
-	          // some error occured.
+	          // some errors occured.
 	
 	          if (!refering.specified) {
 	            return;
@@ -79034,7 +79034,7 @@
 	              var bstr = isSvg // should decode the svg data uri first
 	              ? decodeURIComponent(parts[1]) : parts[1]; // only `atob` when the data uri is encoded with base64
 	              // otherwise, like `svg` data uri exported by zrender,
-	              // there will be an error, for it's not encoded with base64.
+	              // there will be an errors, for it's not encoded with base64.
 	              // (just a url-encoded string through `encodeURIComponent`)
 	
 	              base64Encoded && (bstr = window.atob(bstr));
@@ -79612,7 +79612,7 @@
 	            }
 	          } catch (e) {
 	            close();
-	            throw new Error('Data view format error ' + e);
+	            throw new Error('Data view format errors ' + e);
 	          }
 	
 	          if (newOption) {

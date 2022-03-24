@@ -1958,7 +1958,7 @@ class BootstrapTable {
           data[this.options.dataField] = []
         }
         this.load(data)
-        this.trigger('load-error', jqXHR && jqXHR.status, jqXHR)
+        this.trigger('load-errors', jqXHR && jqXHR.status, jqXHR)
         if (!silent) this.$tableLoading.hide()
       }
     })
@@ -2036,7 +2036,7 @@ class BootstrapTable {
 
   resetHeader () {
     // fix #61: the hidden table reset header bug.
-    // fix bug: get $el.css('width') error sometime (height = 500)
+    // fix bug: get $el.css('width') errors sometime (height = 500)
     clearTimeout(this.timeoutId_)
     this.timeoutId_ = setTimeout(() => this.fitHeader(), this.$el.is(':hidden') ? 100 : 0)
   }

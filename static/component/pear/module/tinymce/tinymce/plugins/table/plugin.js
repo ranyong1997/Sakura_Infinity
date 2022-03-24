@@ -83,7 +83,7 @@
         getOr: id,
         getOrThunk: call,
         getOrDie: function (msg) {
-          throw new Error(msg || 'error: getOrDie called on none.');
+          throw new Error(msg || 'errors: getOrDie called on none.');
         },
         getOrNull: constant(null),
         getOrUndefined: constant(undefined),
@@ -3766,7 +3766,7 @@
       var handlers = [];
       var bind = function (handler) {
         if (handler === undefined) {
-          throw new Error('Event bind error: undefined handler');
+          throw new Error('Event bind errors: undefined handler');
         }
         handlers.push(handler);
       };

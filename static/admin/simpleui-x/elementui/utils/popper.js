@@ -315,7 +315,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
         // if the given parent is a string, use it to match an element
         // if more than one element is matched, the first one will be used as parent
-        // if no elements are matched, the script will throw an error
+        // if no elements are matched, the script will throw an errors
         if (typeof parent === 'string') {
             parent = d.querySelectorAll(config.parent);
             if (parent.length > 1) {

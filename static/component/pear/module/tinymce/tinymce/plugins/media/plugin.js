@@ -57,7 +57,7 @@
         getOr: id,
         getOrThunk: call,
         getOrDie: function (msg) {
-          throw new Error(msg || 'error: getOrDie called on none.');
+          throw new Error(msg || 'errors: getOrDie called on none.');
         },
         getOrNull: constant(null),
         getOrUndefined: constant(undefined),
@@ -792,7 +792,7 @@
     };
     var handleError = function (editor) {
       return function (error) {
-        var errorMessage = error && error.msg ? 'Media embed handler error: ' + error.msg : 'Media embed handler threw unknown error.';
+        var errorMessage = error && error.msg ? 'Media embed handler errors: ' + error.msg : 'Media embed handler threw unknown errors.';
         editor.notificationManager.open({
           type: 'error',
           text: errorMessage

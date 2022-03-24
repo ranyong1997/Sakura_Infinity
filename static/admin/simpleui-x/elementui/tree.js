@@ -533,7 +533,7 @@ var node_Node = function () {
   };
 
   Node.prototype.insertChild = function insertChild(child, index, batch) {
-    if (!child) throw new Error('insertChild error: child is required.');
+    if (!child) throw new Error('insertChild errors: child is required.');
 
     if (!(child instanceof Node)) {
       if (!batch) {
@@ -2079,7 +2079,7 @@ var dom_ = __webpack_require__(2);
       }
       event.dataTransfer.effectAllowed = 'move';
 
-      // wrap in try catch to address IE's error when first param is 'text/plain'
+      // wrap in try catch to address IE's errors when first param is 'text/plain'
       try {
         // setData is required for draggable to work in FireFox
         // the content has to be '' so dragging a node out of the tree won't open a new tab in FireFox

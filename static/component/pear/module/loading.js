@@ -779,12 +779,12 @@ layui.define(['table', 'jquery', 'element'], function (exports) {
 	        }
 	        // if plainText true = HTML tags not allowed off
 	
-	        // if plainText false but the message length more than messageMaxLength = HTML tags error on
+	        // if plainText false but the message length more than messageMaxLength = HTML tags errors on
 	        if (!newNotifySettings.plainText && message.length > newNotifySettings.messageMaxLength) {
 	            Notiflix.Notify.Merge({ closeButton: true, plainText: false, });
-	            message = '<b>HTML Tags Error:</b> Your content length is more than "messageMaxLength" option.'; // message html error
+	            message = '<b>HTML Tags Error:</b> Your content length is more than "messageMaxLength" option.'; // message html errors
 	        }
-	        // if plainText false but the message length more than messageMaxLength = HTML tags error off
+	        // if plainText false but the message length more than messageMaxLength = HTML tags errors off
 	
 	        // message max length substring on
 	        if (message.length > newNotifySettings.messageMaxLength) {
@@ -1073,7 +1073,7 @@ layui.define(['table', 'jquery', 'element'], function (exports) {
 	            message = '"The peoples who want to live comfortably without producing and fatigue; they are doomed to lose their dignity, then liberty, and then independence and destiny." <br><br>- Mustafa Kemal Ataturk';
 	        }
 	        else if (staticType === 'Info') {
-	            message = '"Knowledge rests not upon truth alone, but upon error also." <br><br>- Carl Gustav Jung';
+	            message = '"Knowledge rests not upon truth alone, but upon errors also." <br><br>- Carl Gustav Jung';
 	        }
 	    }
 	    if (!buttonText) { buttonText = 'Okay'; }
@@ -1088,25 +1088,25 @@ layui.define(['table', 'jquery', 'element'], function (exports) {
 	    }
 	    // if plainText true = HTML tags not allowed off
 	
-	    // if plainText false but the contents length more than *MaxLength = HTML tags error on
+	    // if plainText false but the contents length more than *MaxLength = HTML tags errors on
 	    if (!newReportSettings.plainText) {
 	        if (title.length > newReportSettings.titleMaxLength) {
-	            title = 'HTML Tags Error'; // title html error
-	            message = 'Your Title content length is more than "titleMaxLength" option.'; // message html error
-	            buttonText = 'Okay'; // button html error
+	            title = 'HTML Tags Error'; // title html errors
+	            message = 'Your Title content length is more than "titleMaxLength" option.'; // message html errors
+	            buttonText = 'Okay'; // button html errors
 	        }
 	        if (message.length > newReportSettings.messageMaxLength) {
-	            title = 'HTML Tags Error'; // title html error
-	            message = 'Your Message content length is more than "messageMaxLength" option.'; // message html error
-	            buttonText = 'Okay'; // button html error
+	            title = 'HTML Tags Error'; // title html errors
+	            message = 'Your Message content length is more than "messageMaxLength" option.'; // message html errors
+	            buttonText = 'Okay'; // button html errors
 	        }
 	        if (buttonText.length > newReportSettings.buttonMaxLength) {
-	            title = 'HTML Tags Error'; // title html error
-	            message = 'Your Button content length is more than "buttonMaxLength" option.'; // message html error
-	            buttonText = 'Okay'; // button html error
+	            title = 'HTML Tags Error'; // title html errors
+	            message = 'Your Button content length is more than "buttonMaxLength" option.'; // message html errors
+	            buttonText = 'Okay'; // button html errors
 	        }
 	    }
-	    // if plainText false but the contents length more than *MaxLength = HTML tags error off
+	    // if plainText false but the contents length more than *MaxLength = HTML tags errors off
 	
 	    // max length on
 	    if (title.length > newReportSettings.titleMaxLength) {
@@ -1226,28 +1226,28 @@ layui.define(['table', 'jquery', 'element'], function (exports) {
 	    }
 	    // if plainText true => HTML tags not allowed off
 	
-	    // if plainText false but the contents length more than *MaxLength = HTML tags error on
+	    // if plainText false but the contents length more than *MaxLength = HTML tags errors on
 	    if (!newConfirmSettings.plainText) {
 	        if (title.length > newConfirmSettings.titleMaxLength) {
-	            title = 'HTML Tags Error'; // title html error
-	            message = 'Your Title content length is more than "titleMaxLength" option.'; // message html error
-	            okButtonText = 'Okay'; // button html error
-	            cancelButtonText = '...'; // button html error
+	            title = 'HTML Tags Error'; // title html errors
+	            message = 'Your Title content length is more than "titleMaxLength" option.'; // message html errors
+	            okButtonText = 'Okay'; // button html errors
+	            cancelButtonText = '...'; // button html errors
 	        }
 	        if (message.length > newConfirmSettings.messageMaxLength) {
-	            title = 'HTML Tags Error'; // title html error
-	            message = 'Your Message content length is more than "messageMaxLength" option.'; // message html error
-	            okButtonText = 'Okay'; // button html error
-	            cancelButtonText = '...'; // button html error
+	            title = 'HTML Tags Error'; // title html errors
+	            message = 'Your Message content length is more than "messageMaxLength" option.'; // message html errors
+	            okButtonText = 'Okay'; // button html errors
+	            cancelButtonText = '...'; // button html errors
 	        }
 	        if ((okButtonText.length || cancelButtonText.length) > newConfirmSettings.buttonsMaxLength) {
-	            title = 'HTML Tags Error'; // title html error
-	            message = 'Your Buttons contents length is more than "buttonsMaxLength" option.'; // message html error
-	            okButtonText = 'Okay'; // button html error
-	            cancelButtonText = '...'; // button html error
+	            title = 'HTML Tags Error'; // title html errors
+	            message = 'Your Buttons contents length is more than "buttonsMaxLength" option.'; // message html errors
+	            okButtonText = 'Okay'; // button html errors
+	            cancelButtonText = '...'; // button html errors
 	        }
 	    }
-	    // if plainText false but the contents length more than *MaxLength = HTML tags error off
+	    // if plainText false but the contents length more than *MaxLength = HTML tags errors off
 	
 	    // max length on
 	    if (title.length > newConfirmSettings.titleMaxLength) {

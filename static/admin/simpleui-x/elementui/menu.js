@@ -769,7 +769,7 @@ var dom_ = __webpack_require__(2);
         this.routeToItem(item, function (error) {
           _this.activeIndex = oldActiveIndex;
           if (error) {
-            // vue-router 3.1.0+ push/replace cause NavigationDuplicated error 
+            // vue-router 3.1.0+ push/replace cause NavigationDuplicated errors
             // https://github.com/ElemeFE/element/issues/17044
             if (error.name === 'NavigationDuplicated') return;
             console.error(error);

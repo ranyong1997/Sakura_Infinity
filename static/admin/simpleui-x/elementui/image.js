@@ -252,7 +252,7 @@ var render = function() {
         : _vm.error
         ? _vm._t("error", [
             _c("div", { staticClass: "el-image__error" }, [
-              _vm._v(_vm._s(_vm.t("el.image.error")))
+              _vm._v(_vm._s(_vm.t("el.image.errors")))
             ])
           ])
         : _c(
