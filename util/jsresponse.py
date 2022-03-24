@@ -28,9 +28,6 @@ class JsResponse(Response):
                 'probably meant to pass serialized `.data` or '
                 '`.errors`. representation.'
             )
-            # logger.errors('You passed a Serializer instance as data, but '
-            #              'probably meant to pass serialized `.data` or '
-            #              '`.errors`. representation.')
             raise AssertionError(msg)
 
         self.data = {"code": code, "msg": msg, "data": data}

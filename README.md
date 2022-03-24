@@ -73,3 +73,6 @@ python manage.py runserver
 - 【AES加密、解密】：https://www.cnblogs.com/namejmj/p/14747491.html
 - 【FTP下载】：https://www.jianshu.com/p/055bbe9a2e7d
 - 【Simple UI】：https://simpleui.72wo.com/docs/simpleui/
+- 【分页】：https://blog.csdn.net/weixin_44633951/article/details/104300894
+- 【BootStrap3】：https://v3.bootcss.com/
+- 【bootstrap-datetimepicker】：https://getdatepicker.com/4/

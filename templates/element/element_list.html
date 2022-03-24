@@ -5,11 +5,9 @@
 <!-- Specific CSS goes HERE -->
 {% block stylesheets %}
     <script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
-
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.min.js"></script>
-
     {#toastr弹框在线CDN#}
     <script src="https://cdn.bootcss.com/toastr.js/2.1.4/toastr.min.js"></script>
 
@@ -88,8 +86,7 @@
                                             <thead>
                                             <tr>
                                                 <th>id</th>
-
-                                                <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;操作</th>
+                                                <th>操作</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -97,8 +94,6 @@
                                                 <td>
                                                     <button id="send">发送</button>
                                                 </td>
-
-
                                                 <td>
                                                     <button type="button" class="btn btn-success"
                                                             onclick="window.location.href='';">
@@ -129,7 +124,6 @@
                                                     <div class="modal-header">
                                                         <button type="button" class="close" data-dismiss="modal"
                                                                 aria-hidden="true">
-                                                            &times;
                                                         </button>
                                                         <h4 class="modal-title" id="myModalLabel">
                                                             新增记录
@@ -137,8 +131,6 @@
                                                     </div>
                                                     {# 模态框body #}
                                                     <div class="modal-body" style="height: 100%;">
-
-
                                                         <div class="form-group">
                                                             <label for="lastname"
                                                                    class="col-sm-3 control-label">版本号</label>
@@ -154,13 +146,12 @@
                                                             <label for="firstname"
                                                                    class="col-sm-3 control-label">转测时间</label>
                                                             <div class='input-group col-sm-7 date' id='datetimepicker2'>
-                                                                {#                     <div class="col-sm-7" id='datetimepicker2'>#}
                                                                 <input type='text' class="form-control"
                                                                        name="submit_test_time" id="submit_test_time"
-                                                                       required="required">
+                                                                       required="required" placeholder="请选择日期">
                                                                 <span class="input-group-addon">
-                                                                 <span class="glyphicon glyphicon-calendar"></span>
-                                                             </span>
+                                                                <span class="glyphicon glyphicon-calendar"></span>
+                                                                </span>
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
@@ -197,7 +188,6 @@
                                                                 </input>
                                                             </div>
                                                         </div>
-
                                                         <div class="form-group">
                                                             <label for="lastname"
                                                                    class="col-sm-3 control-label">失败数</label>
@@ -208,8 +198,6 @@
                                                                        placeholder="请输入已执行失败数">
                                                             </div>
                                                         </div>
-
-
                                                     </div>
                                                     {#            模态框底部#}
                                                     <div class="modal-footer">
@@ -223,15 +211,10 @@
                                             </div>
                                         </div>
                                     </form>
-
-
                                     <div class="row">
                                         <div class='col-4'>
                                             <a>合计 条</a>
                                         </div>
-                                        {#                                                                                <div class='col-8'>#}
-                                        {#                                                                                    {% show_pagination %}#}
-                                        {#                                                                                </div>#}
                                         <div class='col-8'>
                                         </div>
                                     </div>
@@ -248,10 +231,10 @@
 
 <!-- Specific Page JS goes HERE  -->
 {% block javascripts %}
-    <script>
+    <script type="text/javascript">
         $("#send").click(function () {
             var post_data = {
-                "location_type": "han11",
+                "location_type": "test",
             };
             $.ajax({
                 url: "/api/locatype/",
@@ -267,7 +250,11 @@
                 error: function () {
                     alert("服务器请求超时,请重试!")
                 }
-
+            });
+        });
+        $(function () {
+            $('#datetimepicker2').datetimepicker({
+                locale: 'ru'
             });
         });
     </script>

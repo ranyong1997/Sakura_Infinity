@@ -6,7 +6,6 @@ import sys, os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 sys.path.insert(0, os.path.join(BASE_DIR, "apps"))
 
 SECRET_KEY = 'django-insecure-j**=7l4rg&zqyjbui9qyoe^#c(-5a#2^(iu%2jz0@)fjfn9%rm'
@@ -208,4 +207,3 @@ LOGGING = {
 }
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-

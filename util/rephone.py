@@ -1,6 +1,7 @@
 import re
 
 
+# 校验手机格式
 def is_phone(tel):
     """
     匹配手机号码合法性
