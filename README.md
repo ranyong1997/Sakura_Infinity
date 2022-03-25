@@ -1,7 +1,7 @@
 <div align="center">
 <br/>
 <br/>
-<img src="admin/images/logo.png" width="90px" style="margin-top:30px;"/>
+<img src="static/assets/images/favicons.svg" width="90px" style="margin-top:30px;"/>
   <h1 align="center">
     Skura_Infinity
   </h1>

@@ -38,7 +38,6 @@ class LocationType(models.Model):
     """
     定位类型字典表
     """
-
     location_type = models.CharField(max_length=100, unique=True, verbose_name='定位类型')
 
     def __str__(self):
@@ -58,7 +57,6 @@ class OperateType(models.Model):
     """
     执行类型字典表
     """
-
     operate_type = models.CharField(max_length=100, unique=True, verbose_name='定位类型')
 
     def __str__(self):

@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 
+import os
+import sys
 from datetime import timedelta
 from pathlib import Path
-import sys, os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -31,10 +32,10 @@ INSTALLED_APPS = [
     'django_celery_results',  # 查看 celery 执行结果
     'rest_framework.authtoken',
     'django_filters',
-    'oauth',
-    'project',
-    'element',
-    'tool'
+    'apps.oauth',
+    'apps.project',
+    'apps.element',
+    'apps.tool'
 ]
 
 MIDDLEWARE = [
@@ -57,8 +58,7 @@ ROOT_URLCONF = 'Sakura_Infinity.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
-        ,
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
