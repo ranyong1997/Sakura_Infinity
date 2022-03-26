@@ -76,3 +76,4 @@ python manage.py runserver
 - 【分页】：https://blog.csdn.net/weixin_44633951/article/details/104300894
 - 【BootStrap3】：https://v3.bootcss.com/
 - 【bootstrap-datetimepicker】：https://getdatepicker.com/4/
+- 【ajax跨域】：https://www.cnblogs.com/huangdabing/p/9249216.html
