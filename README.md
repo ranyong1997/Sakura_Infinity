@@ -1,7 +1,7 @@
 <div align="center">
 <br/>
 <br/>
-<img src="static/assets/images/favicons.svg" width="90px" style="margin-top:30px;"/>
+<img src="static/assets/images/realm.svg" width="auto" style="margin-top:30px;"/>
   <h1 align="center">
     Skura_Infinity
   </h1>
@@ -63,10 +63,10 @@ python manage.py runserver
 ```
 ## 效果 
 > 数据库建表预览：
+![image-20220321235727915](https://gitee.com/ran_yong/mark-down-table-upload/raw/824fecdcc123da03f632ad05d4795b812d98b407/img/image-20220321235727915.png)
 
-![image-20220321235727915](https://gitee.com/ran_yong/mark-down-table-upload/raw/master/img/image-20220321235727915.png)
-
-
+> 登录页面：
+![image-20220326112909886](https://gitee.com/ran_yong/mark-down-table-upload/raw/824fecdcc123da03f632ad05d4795b812d98b407/img/image-20220326112909886.png)
 ## 参考文献
 - 【日志配置】：https://blog.csdn.net/weixin_37590093/article/details/81536372
 - 【检测是否登录】：https://www.cnblogs.com/liuxuelin/p/14585677.html

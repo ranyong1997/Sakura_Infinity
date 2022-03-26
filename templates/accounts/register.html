@@ -3,7 +3,6 @@
 {% block title %} 注册 {% endblock %}
 
 {% block content %}
-
     <div class="auth-wrapper">
         <div class="auth-content">
             <div class="auth-bg">
@@ -45,7 +44,6 @@
                             <input type="password" name="password2" class="form-control" required="required"
                                    placeholder="确认密码">
                         </div>
-
                         {% if form.errors %}
                             <div class="form-group">
                                 <p style="color: red">{{ form.errors.username.0 }}</p>   <!-- 获取第一个错误 -->
@@ -53,7 +51,6 @@
                                 <p style="color: red">{{ form.errors.mobile.0 }}</p>
                             </div>
                         {% endif %}
-
                         <div class="form-group text-left">
                             <div class="checkbox checkbox-fill d-inline">
                                 <input type="checkbox" name="checkbox-fill-1" id="checkbox-fill-a1" checked="">
@@ -62,16 +59,16 @@
                         </div>
                         <button name="register" class="btn btn-primary shadow-2 mb-4" type="submit">提交注册</button>
                     </form>
-
                     <p class="mb-0 text-muted">已经有账户了？ <a href="{% url 'login' %}">登录</a></p>
                     <br/>
                     <p class="mb-2 text-muted">
-                        <a target="_blank" href="#">Beidou</a>
-                        - <a target="_blank">
-                        <script type="text/javascript">
-                            var date = new Date();
-                            document.write(date.getFullYear());</script>
-                    </a>
+                        <a target="_blank" href="#">Beidou</a>-
+                        <a target="_blank">
+                            <script type="text/javascript">
+                                var date = new Date();
+                                document.write(date.getFullYear());</script>
+                        </a>
+                        <img src="{% static 'admin/images/background.svg' %}">
                     </p>
                 </div>
             </div>
