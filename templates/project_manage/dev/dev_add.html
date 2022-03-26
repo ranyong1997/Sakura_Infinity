@@ -1,0 +1,32 @@
+{% extends "layouts/base.html" %}
+{% load static crispy_forms_tags %}
+{% block title %}新增环境{% endblock %}
+
+{% block stylesheets %}{% endblock stylesheets %}
+{% block content %}
+    {% block fromadd %}
+        <div class="card">
+            <div class="card-header">
+                <h5 class="m-b-10">
+               <span>
+                   <i class="feather icon-box">
+                       <a href="{% url 'devlist' %}">环境列表</a>
+                   </i>
+               </span>
+                </h5>
+            </div>
+            <div class="card-body table-bordered-style">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ from|crispy }}
+                    <button type="submit" class="btn btn-primary">
+                        新增
+                    </button>
+                    <button type="button" class="btn btn-danger" onclick="window.location.href='{% url 'dev_list' %}';">
+                        取消
+                    </button>
+                </form>
+            </div>
+        </div>
+    {% endblock %}
+{% endblock content %}
