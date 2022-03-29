@@ -13,6 +13,9 @@
                    </i>
                </span>
                 </h5>
+                <span>
+                    <i class="fa fa-map-marker">新增环境</i>
+                </span>
             </div>
             <div class="card-body table-bordered-style">
                 <form method="post" enctype="multipart/form-data">
@@ -21,7 +24,7 @@
                     <button type="submit" class="btn btn-primary">
                         新增
                     </button>
-                    <button type="button" class="btn btn-danger" onclick="window.location.href='{% url 'dev_list' %}';">
+                    <button type="button" class="btn btn-danger" onclick="window.location.href='{% url 'devlist' %}';">
                         取消
                     </button>
                 </form>
@@ -29,3 +32,4 @@
         </div>
     {% endblock %}
 {% endblock content %}
+{% block javascripts %}{% endblock javascripts %}
