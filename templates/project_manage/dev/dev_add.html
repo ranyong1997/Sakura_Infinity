@@ -1,5 +1,5 @@
 {% extends "layouts/base.html" %}
-{% load static crispy_forms_tags %}
+{% load  static crispy_forms_tags %}
 {% block title %}新增环境{% endblock %}
 {% block stylesheets %}{% endblock stylesheets %}
 {% block content %}
@@ -7,29 +7,33 @@
         <div class="card">
             <div class="card-header">
                 <h5 class="m-b-10">
-               <span>
-                   <i class="feather icon-box">
-                       <a href="{% url 'devlist' %}">环境列表</a>
-                   </i>
-               </span>
+                    <span>
+                        <i class="feather icon-box">
+                            <a href="{% url 'devlist' %}">
+                                环境列表
+                            </a>
+                        </i>
+                    </span>
                 </h5>
                 <span>
-                    <i class="fa fa-map-marker">新增环境</i>
+                    <i class="fa fa-map-marker"></i>
+                    新增环境
                 </span>
             </div>
-            <div class="card-body table-bordered-style">
+            <div class="card-block table-border-style">
                 <form method="post" enctype="multipart/form-data">
                     {% csrf_token %}
-                    {{ from|crispy }}
+                    {{ form|crispy }}
                     <button type="submit" class="btn btn-primary">
                         新增
                     </button>
-                    <button type="button" class="btn btn-danger" onclick="window.location.href='{% url 'devlist' %}';">
+                    <button type="button" class="btn btn-danger"
+                            onclick="window.location.href='{% url 'devlist' %}';">
                         取消
                     </button>
                 </form>
             </div>
         </div>
-    {% endblock %}
+    {% endblock fromadd %}
 {% endblock content %}
 {% block javascripts %}{% endblock javascripts %}
