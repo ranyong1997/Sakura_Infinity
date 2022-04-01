@@ -4,31 +4,38 @@
     <div class="navbar-wrapper">
         <div class="navbar-brand header-logo">
             <a href="" class="b-brand">
-{#                <div class="b-bg">#}
-                    <img src="{% static '/assets/images/realm.svg' %}" style="height: 25px"/>
-{#                </div>#}
+                <img src="{% static '/assets/images/realm.svg' %}" style="height: 25px"/>
                 <span class="b-title">南天门后台管理</span>
             </a>
-            <a class="mobile-menu" id="mobile-collapse" href="javascript:"><span></span></a>
+            <a class="mobile-menu" id="mobile-collapse" href="javascript:"></a>
         </div>
         <div class="navbar-content scroll-div">
             <ul class="nav pcoded-inner-navbar">
                 <li data-username="dashboard Default Ecommerce CRM Analytics Crypto Project"
                     class="nav-item ">
-                    <a href="{% url 'index' %}" class="nav-link "><span class="pcoded-micon"><i
-                            class="feather icon-home"></i></span><span class="pcoded-mtext">首页</span></a>
+                    <a href="{% url 'index' %}" class="nav-link ">
+                        <span class="pcoded-micon">
+                        <i class="feather icon-home"></i>
+                        </span>
+                        <span class="pcoded-mtext">首页</span>
+                    </a>
                 </li>
                 <li class="nav-item ">
                     <a href="{% url 'userlist' %}" class="nav-link ">
-                            <span class="pcoded-micon"><i
-                                    class="fa fa-users"></i>
+                        <span class="pcoded-micon">
+                            <i class="fa fa-users"></i>
                         </span>
-                        <span class="pcoded-mtext">用户管理</span></a>
+                        <span class="pcoded-mtext">用户管理</span>
+                    </a>
                 </li>
                 <!-- 项目管理 -->
                 <li class="nav-item pcoded-hasmenu ">
-                    <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="feather icon-box"></i></span><span
-                            class="pcoded-mtext">项目管理</span></a>
+                    <a href="javascript:" class="nav-link ">
+                        <span class="pcoded-micon">
+                        <i class="feather icon-box"></i>
+                        </span>
+                        <span class="pcoded-mtext">项目管理</span>
+                    </a>
                     <ul class="pcoded-submenu">
                         <li class=""><a href="{% url 'devlist' %}" class="">部署环境</a></li>
                         <li class=""><a href="{% url 'modulelist' %}" class="">模块信息</a></li>
@@ -36,26 +43,40 @@
                     </ul>
                 </li>
                 <li class="nav-item pcoded-hasmenu ">
-                    <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i class="fa fa-bars"></i></span><span
-                            class="pcoded-mtext">用例管理</span></a>
+                    <a href="javascript:" class="nav-link ">
+                        <span class="pcoded-micon">
+                            <i class="fa fa-bars"></i>
+                        </span>
+                        <span class="pcoded-mtext">用例管理</span>
+                    </a>
                     <ul class="pcoded-submenu">
-                        <li class=""><a href="{% url 'eln' %}" class="">用例详情</a></li>
+                        <li class="">
+                            <a href="{% url 'eln' %}" class="">用例详情</a>
+                        </li>
                     </ul>
                 </li>
 
                 <li class="nav-item pcoded-hasmenu ">
-                    <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i
-                            class="fa fa-tasks"></i></span><span
-                            class="pcoded-mtext">任务管理</span></a>
+                    <a href="javascript:" class="nav-link ">
+                        <span class="pcoded-micon">
+                            <i class="fa fa-tasks"></i>
+                        </span>
+                        <span class="pcoded-mtext">任务管理</span>
+                    </a>
                     <ul class="pcoded-submenu">
-                        <li class=""><a href="{% url 'checklist' %}" class="">任务详情</a></li>
+                        <li class="">
+                            <a href="{% url 'checklist' %}" class="">任务详情</a>
+                        </li>
                     </ul>
                 </li>
 
                 <li class="nav-item pcoded-hasmenu ">
-                    <a href="javascript:" class="nav-link "><span class="pcoded-micon"><i
-                            class="fa fa-tasks"></i></span><span
-                            class="pcoded-mtext">工具合集</span></a>
+                    <a href="javascript:" class="nav-link ">
+                        <span class="pcoded-micon">
+                            <i class="fa fa-tasks"></i>
+                        </span>
+                        <span class="pcoded-mtext">工具合集</span>
+                    </a>
                     <ul class="pcoded-submenu">
                         <li class=""><a href="{% url 'checklist' %}" class="">dependency-(安全扫描)</a></li>
                         <li class=""><a href="{% url 'xraylist' %}" class="">Xray-(sql注入扫描)</a></li>
@@ -68,16 +89,19 @@
                     <a href="" class="nav-link ">
                         <span class="pcoded-micon">
                             <i class="fa fa-bookmark"></i>
-                        </span><span class="pcoded-mtext">记录操作 </span></a>
+                        </span>
+                        <span class="pcoded-mtext">记录操作 </span>
+                    </a>
                 </li>
 
                 {% if user.is_superuser %}  <!-- 管理员权限 -->
                     <li class="nav-item ">
-                        <a href="/admin/" class="nav-link ">
-                        <span class="pcoded-micon"><i
-                                class="fas fa-shield-alt"></i>
+                        <a href="/admin/" class="nav-link">
+                        <span class="pcoded-micon">
+                            <i class="fas fa-shield-alt"></i>
                     </span>
-                            <span class="pcoded-mtext">后台管理</span></a>
+                            <span class="pcoded-mtext">后台管理</span>
+                        </a>
                     </li>
                 {% endif %}
             </ul>

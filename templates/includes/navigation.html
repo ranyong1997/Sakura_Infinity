@@ -1,26 +1,23 @@
 {#顶部#}
-<!-- NOT IMPLEMENTED -->
-<!-- {% load static %} -->
-<nav class="navbar navbar-light  justify-content-between">
-    <div class="col-6">
-    </div>
+{% load static %}
+<nav class="navbar navbar-light justify-content-between">
+    <div class="col-6"></div>
     <div class="col-2 ">
         <div class="nav-item dropdown float-right">
-            <h8
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    id="navbarDropdown"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false">
+            <h8 class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false">
                 {% if user.gender == 'female' %}
                     <img src="{% static '/assets/images/user/avatar-1.jpg' %}"
                          style="width:30px;height:30px;border-radius:50%;"
-                         alt="">
+                         alt="女头">
                 {% else %}
                     <img src="{% static '/assets/images/user/avatar-2.jpg' %}"
                          style="width:30px;height:30px;border-radius:50%;"
-                         alt="">
+                         alt="男头">
                 {% endif %}
                 {{ user.username }}
             </h8>
