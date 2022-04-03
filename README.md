@@ -80,3 +80,4 @@ python manage.py runserver
 - 【BootStrap3】：https://v3.bootcss.com/
 - 【bootstrap-datetimepicker】：https://getdatepicker.com/4/
 - 【ajax跨域】：https://www.cnblogs.com/huangdabing/p/9249216.html
+- 【漏洞扫描】：https://github.com/jeremylong/DependencyCheck
