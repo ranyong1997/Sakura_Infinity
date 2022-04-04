@@ -1,7 +1,9 @@
 {% extends "layouts/base.html" %}
-{% load static crispy_forms_tags %}
-{% block title %}AES 加解密{% endblock title %}
-<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+{% load  static crispy_forms_tags %}
+{% block title %}AES 加解密{% endblock %}
+<head>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
 {% block stylesheets %}
     <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -13,9 +15,7 @@
                 <h5 class="m-b-10">
                     <span>
                         <i class="feather icon-box">
-                            <a href="{% url 'index' %}">
-                                首页
-                            </a>
+                            <a href="{% url 'index' %}">首页</a>
                         </i>
                     </span>
                 </h5>
@@ -25,71 +25,67 @@
                 </span>
             </div>
             <div class="card-block table-border-style">
-                <form id="frm1" method="get" enctype="multipart/form-data">
+                <form id="frm1" method="GET" enctype="multipart/form-data">
                     {% csrf_token %}
-                    <h5 class="col-sm col-xl-8">公共key :</h5>
+                    <h5 class="col-sm- col-xl-8">公共key :</h5>
                     {% if data.key == 'rk.=278ZAmb~0&]F' %}
-                        <div class="col-sm col-xl-8">
+                        <div class="col-sm- col-xl-8">
                             <input name="key" class="form-control" required="required" maxlength="30"
-                                   placeholder="公共key" value="rk.=278ZAmb~0&]F">
+                                   placeholder="公共key" value='rk.=278ZAmb~0&]F'>
                         </div>
                     {% else %}
-                        <div class="col-sm col-xl-8">
+                        <div class="col-sm- col-xl-8">
                             <input name="key" class="form-control" required="required" maxlength="30"
                                    placeholder="公共key" value={{ data.key }}>
                         </div>
                     {% endif %}
                     <br>
-                    <h5 class="col-sm col-xl-8">偏移量 :</h5>
+                    <h5 class="col-sm- col-xl-8">偏移量iv :</h5>
                     {% if data.key == 'rk.=278ZAmb~0&]F' %}
-                        <div class="col-sm col-xl-8">
+                        <div class="col-sm- col-xl-8">
                             <input name="iv" class="form-control" required="required" maxlength="30" id="iv"
-                                   placeholder="偏移量iv" value="1dd89`X3nVfmchm?">
+                                   placeholder="偏移量iv" value='1dd89`X3nVfmchm?'>
                         </div>
                     {% else %}
-                        <div class="col-sm col-xl-8">
+                        <div class="col-sm- col-xl-8">
                             <input name="iv" class="form-control" required="required" maxlength="30"
                                    placeholder="偏移量iv" value={{ data.iv }}>
                         </div>
                     {% endif %}
                     <br>
-                    <h5 class="col-sm col-xl-8">加解密参数 :</h5>
-                    {% if data.data == None %}
-                        <div class="col-sm col-xl-8">
-                            <textarea class="form-control max-textarea" name="data" placeholder="请输入需要加解密的参数"
-                                      required="required" maxlength="255" rows="6">
-                            </textarea>
+                    <h5 class="col-sm- col-xl-8">加解密参数 :</h5>
+                    {% if data.data == Node %}
+                        <div class="col-sm- col-xl-8">
+                        <textarea class="form-control max-textarea" name="data" placeholder="请输入需要加解密的参数"
+                                  required="required"
+                                  maxlength="255" rows="6"></textarea>
                         </div>
                     {% else %}
-                        <div class="col-sm col-xl-8">
-                            <textarea class="form-control max-textarea" name="data" placeholder="请输入需要加解密的参数"
-                                      required="required" maxlength="255" rows="6">
-                                {{ data.data }}
-                            </textarea>
+                        <div class="col-sm- col-xl-8">
+                        <textarea class="form-control max-textarea" name="data" placeholder="请输入需要加解密的参数"
+                                  required="required"
+                                  maxlength="255" rows="6">{{ data.data }}</textarea>
                         </div>
                     {% endif %}
                     <br>
-                    <h5 class="col-sm col-xl-8">加解密结果 :</h5>
+                    <h5 class="col-sm- col-xl-8">加解密结果 :</h5>
                     {% if data.code == Node %}
                         <div class="col-sm-12 col-xl-8">
-                            <textarea class="form-control max-textarea" name="code" placeholder="已经处理完的加解密结果"
-                                      maxlength="255" rows="3" readonly="readonly">
-                            </textarea>
+                        <textarea class="form-control max-textarea" name="code" placeholder="已经处理完的加解密结果"
+                                  maxlength="255" rows="3" readonly="readonly"></textarea>
                         </div>
                     {% else %}
                         <div class="col-sm-12 col-xl-8">
-                             <textarea class="form-control max-textarea" name="code" placeholder="已经处理完的加解密结果"
-                                       maxlength="255" rows="3" id="biao1" readonly="readonly">
-                                 {{ data.code }}
-                            </textarea>
+                        <textarea class="form-control max-textarea" name="code" placeholder="已经处理完的加解密结果"
+                                  maxlength="255" rows="3" id="biao1" readonly="readonly">{{ data.code }}</textarea>
                         </div>
                     {% endif %}
                     <br>
-                    <div class="col-sm col-xl-8">
-                        <input type="submit" class="btn btn-primary" name="submit" value="加密">
-                        <input type="submit" class="btn btn-success" name="submit" value="解密">
+                    <div class="col-sm- col-xl-8">
+                        <input type="submit" class="btn btn-primary" name="submit" value="加密"/>
+                        <input type="submit" class="btn btn-success" name="submit" value="解密"/>
                         <input type="button" class="btn btn-info" onclick="copytext()" value="复制">
-                        <input type="submit" class="btn btn-secondary" name="submit" value="重置">
+                        <input type="submit" class="btn btn-secondary" name="submit" value="重置"/>
                     </div>
                 </form>
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -97,10 +93,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-body">
-                                {{ data.code }}
-                                <h4 style="color: red">
-                                    复制成功！
-                                </h4>
+                                {{ data.code }}复制成功！
                             </div>
                         </div>
                     </div>
@@ -116,7 +109,6 @@
             copytext2.select();
             document.execCommand("copy");
             alert2();
-            {#alert(copytext2.value + ' 复制成功！',);#}
         }
 
         function alert2() {
