@@ -10,6 +10,7 @@
   </h4> 
 
   [预 览](http://layui.pearadmin.com)    
+  特别鸣谢: [hanwenlu2016](https://github.com/hanwenlu2016) 给予帮助
 </div>
 
 <div align="center">
@@ -19,8 +20,6 @@
 >基于`python3.10`和`Django3.2.5`开发。
 
 </div>
-特别鸣谢:[hanwenlu2016](https://github.com/hanwenlu2016)给予帮助
-
 
 ## 已完成功能
 - [x] 项目初始化创建
